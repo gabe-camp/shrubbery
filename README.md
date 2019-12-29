@@ -4,7 +4,7 @@ Ni! Related to the setup/config of my rpi cluster.  Ni!
 - picture here
   
 Hardware
- - 4 Raspberry Pi 3 Model B+
+ - 4 Raspberry Pi 3 B+
  - 4 microSD cards
  - 1 tower case
  - 1 switch
