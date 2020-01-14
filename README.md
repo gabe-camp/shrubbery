@@ -19,3 +19,4 @@ Setup
 - flannel
 - metallb
 - nginx ingress controller
+- cert-manager
