@@ -21,3 +21,7 @@ Setup
 - nginx ingress controller
 - cert-manager
 - local-path-storage (for connected USB sticks)
+* prometheus + grafana (metrics pipeline)
+* fluentbit + influxdb + grafana (log pipeline)
+
+{*} - denotes "in progress"
