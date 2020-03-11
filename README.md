@@ -20,3 +20,4 @@ Setup
 - metallb
 - nginx ingress controller
 - cert-manager
+- local-path-storage (for connected USB sticks)
