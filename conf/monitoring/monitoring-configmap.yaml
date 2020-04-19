@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: prometheus-server-conf
+  labels:
+    name: prometheus-server-conf
+  namespace:  monitoring
+data:
+  prometheus.yml: |-
+    scrape_configs:
+      - job_name: 'harpi-controller-1'
+        static_configs:
+          - targets: ['192.168.88.1:9100']
+      - job_name: 'harpi-node-1'
+        static_configs:
+          - targets: ['192.168.88.11:9100']
+      - job_name: 'harpi-node-2'
+        static_configs:
+          - targets: ['192.168.88.12:9100']
+      - job_name: 'harpi-node-3'
+        static_configs:
+          - targets: ['192.168.88.13:9100']
+

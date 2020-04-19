@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: gabrielcampanella-ingress
+  namespace: gabrielcampanella
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    kubernetes.io/tls-acme: "true"
+    cert-manager.io/cluster-issuer: "acme-issuer"
+spec:
+  tls:
+  - hosts:
+    - gabrielcampanella.ca
+    secretName: gabrielcampanella-tls
+  rules:
+  - host: gabrielcampanella.ca
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: gabrielcampanella-home
+          servicePort: 80
+
