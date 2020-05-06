@@ -37,18 +37,11 @@ spec:
         app: gabrielcampanella-home
     spec:
       containers:
-      - image: nginx
+      - image: gabecamp/gatsby-site
         name: gabrielcampanella
         ports:
         - containerPort: 80
-        volumeMounts:
-        - name: gabrielcampanella-conf
-          mountPath: /etc/nginx/conf.d
         livenessProbe:
           httpGet:
             path: /
             port: 80
-      volumes:
-        - name: gabrielcampanella-conf
-          configMap:
-            name: gabrielcampanella-conf
