@@ -22,7 +22,7 @@ metadata:
   creationTimestamp: null
   labels:
     app: gabrielcampanella-home
-  name: gabrielcampanella
+  name: gabrielcampanella-home
   namespace: gabrielcampanella
 spec:
   replicas: 1
@@ -38,7 +38,7 @@ spec:
     spec:
       containers:
       - image: gabecamp/gatsby-site
-        name: gabrielcampanella
+        name: gabrielcampanella-home
         ports:
         - containerPort: 80
         livenessProbe:

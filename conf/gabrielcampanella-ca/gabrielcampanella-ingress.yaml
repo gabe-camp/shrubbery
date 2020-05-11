@@ -20,4 +20,8 @@ spec:
         backend:
           serviceName: gabrielcampanella-home
           servicePort: 80
+      - path: /movies
+        backend:
+          serviceName: gabrielcampanella-movies
+          servicePort: 80
 

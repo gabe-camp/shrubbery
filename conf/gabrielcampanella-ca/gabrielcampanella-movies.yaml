@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: gabrielcampanella
+  name: gabrielcampanella-movies
+spec:
+  ports:
+  - port: 80
+    targetPort: 8080
+    protocol: TCP
+  selector:
+    app: gabrielcampanella-movies
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: gabrielcampanella-movies
+  name: gabrielcampanella-movies
+  namespace: gabrielcampanella
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gabrielcampanella-movies
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: gabrielcampanella-movies
+    spec:
+      containers:
+      - image: gabecamp/movienight
+        name: gabrielcampanella-movies
+        ports:
+        - containerPort: 8080
+        env:
+          - name: DEBUG_MODE
+            value: "1"
